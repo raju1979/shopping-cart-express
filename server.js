@@ -1,8 +1,15 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 const dotenv = require('dotenv');
 dotenv.load();
+
+const bodyParser = require("body-parser");
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
+app.use(express.static(path.join(__dirname,"./public")));
+app.use(bodyParser({limit: '5mb'}));
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
