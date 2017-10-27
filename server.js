@@ -33,7 +33,10 @@ app.set('port',(process.env.PORT || 5000));
 // import routes
 const product_route = require("./routes/product_route");
 
+const user_route = require("./routes/user_route");
+
 app.use("/api/product",product_route);
+app.use("/api/user",user_route);
 
 app.get('/',(req,res) => {
 	res.send("success");
