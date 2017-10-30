@@ -7,8 +7,10 @@ const mongoose = require("mongoose");
 const bcrypt = require('bcrypt');
 const salt = bcrypt.genSaltSync(10);
 
+const kk ="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";
+
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey(kk);
 
 var randtoken = require('rand-token');
 
